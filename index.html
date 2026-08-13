@@ -206,12 +206,9 @@ footer{
     <div class="logo">
         <img src="icon.png" alt="APK Logo">
         <h2>apk Download</h2>
-    </div>
-
-    <button class="install-btn" onclick="downloadAPK()">
-        Install
-    </button>
-</div>
+    <a href="worlimtk.apk" download class="install-btn">
+    Install
+</a>
 
 <div class="container">
     <div class="card">
@@ -248,9 +245,11 @@ footer{
         </div>
 
         <div class="download">
-            <button onclick="downloadAPK()">
-                Download APK
-            </button>
+    <a href="worlimtk.apk" download>
+        <button>
+            Download APK
+        </button>
+    </a>
         </div>
 
         <div class="gallery">
@@ -301,7 +300,12 @@ footer{
 
 <script>
 function downloadAPK() {
-    window.location.href = "worlimtk.apk";
+    fbq('track', 'Lead');
+    fbq('trackCustom', 'APKDownload');
+
+    setTimeout(function() {
+        window.location.href = "worlimtk.apk";
+    }, 300);
 }
 </script>
 
