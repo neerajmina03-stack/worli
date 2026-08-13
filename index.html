@@ -8,68 +8,285 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Roboto',sans-serif;}
-body{background:#f1f3f4;color:#202124;}
-.header{background:#fff;height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 25px;box-shadow:0 2px 10px rgba(0,0,0,.08);position:sticky;top:0;z-index:100;}
-.logo{display:flex;align-items:center;gap:12px;}
-.logo img{width:45px;height:45px;border-radius:12px;}
-.logo h2{font-size:22px;font-weight:500;}
-.install-btn{background:#01875f;color:#fff;padding:12px 30px;border:none;border-radius:8px;font-size:16px;cursor:pointer;font-weight:500;}
-.container{max-width:1100px;margin:auto;padding:30px;}
-.card{background:#fff;border-radius:18px;padding:25px;box-shadow:0 5px 20px rgba(0,0,0,.08);}
-.app-header{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
-.app-icon{width:110px;height:110px;border-radius:22px;}
-.app-name{font-size:32px;font-weight:500;}
-.company{color:#01875f;font-size:17px;margin-top:6px;}
-.rating-box{display:flex;gap:40px;margin-top:30px;flex-wrap:wrap;}
-.item{text-align:center;}
-.item h3{font-size:20px;}
-.item p{color:#666;margin-top:5px;}
-.download{margin-top:30px;}
-.download button{background:#01875f;color:white;border:none;padding:16px 60px;font-size:20px;border-radius:10px;cursor:pointer;}
-.gallery{margin-top:40px;display:flex;gap:20px;overflow:auto;}
-.gallery img{width:240px;border-radius:15px;box-shadow:0 3px 10px rgba(0,0,0,.2);}
-.about{margin-top:40px;line-height:1.8;}
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px;}
-.feature{background:#fafafa;padding:20px;border-radius:12px;}
-footer{margin-top:60px;background:#fff;padding:20px;text-align:center;color:#666;}
-@media(max-width:700px){.app-header{flex-direction:column;text-align:center;}.download button{width:100%;}}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Roboto',sans-serif;
+}
+
+body{
+    background:#f1f3f4;
+    color:#202124;
+}
+
+.header{
+    background:#fff;
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 25px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:45px;
+    height:45px;
+    border-radius:12px;
+}
+
+.logo h2{
+    font-size:22px;
+    font-weight:500;
+}
+
+.install-btn{
+    background:#01875f;
+    color:#fff;
+    padding:12px 30px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    font-weight:500;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px;
+}
+
+.card{
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.app-header{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.app-icon{
+    width:110px;
+    height:110px;
+    border-radius:22px;
+}
+
+.app-name{
+    font-size:32px;
+    font-weight:500;
+}
+
+.company{
+    color:#01875f;
+    font-size:17px;
+    margin-top:6px;
+}
+
+.rating-box{
+    display:flex;
+    gap:40px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+.item{
+    text-align:center;
+}
+
+.item h3{
+    font-size:20px;
+}
+
+.item p{
+    color:#666;
+    margin-top:5px;
+}
+
+.download{
+    margin-top:30px;
+}
+
+.download button{
+    background:#01875f;
+    color:white;
+    border:none;
+    padding:16px 60px;
+    font-size:20px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.gallery{
+    margin-top:40px;
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+}
+
+.gallery img{
+    width:240px;
+    border-radius:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+.about{
+    margin-top:40px;
+    line-height:1.8;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.feature{
+    background:#fafafa;
+    padding:20px;
+    border-radius:12px;
+}
+
+footer{
+    margin-top:60px;
+    background:#fff;
+    padding:20px;
+    text-align:center;
+    color:#666;
+}
+
+@media(max-width:700px){
+    .app-header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .download button{
+        width:100%;
+    }
+}
 </style>
 </head>
 <body>
+
 <div class="header">
-<div class="logo"><img src="icon.png"><h2>APK Download</h2></div>
-<button class="install-btn">Install</button>
+    <div class="logo">
+        <img src="icon.png" alt="APK Logo">
+        <h2>APK Download</h2>
+    </div>
+
+    <button class="install-btn" onclick="worlimtk.apk">
+        Install
+    </button>
 </div>
+
 <div class="container">
-<div class="card">
-<div class="app-header">
-<img src="icon.png" class="app-icon">
-<div><div class="app-name">Your App Name</div><div class="company">Your Company</div></div>
+    <div class="card">
+
+        <div class="app-header">
+            <img src="icon.png" class="app-icon" alt="App Icon">
+
+            <div>
+                <div class="app-name">Worli Matka</div>
+                <div class="company">Your Company</div>
+            </div>
+        </div>
+
+        <div class="rating-box">
+            <div class="item">
+                <h3>4.8★</h3>
+                <p>Rating</p>
+            </div>
+
+            <div class="item">
+                <h3>10K+</h3>
+                <p>Downloads</p>
+            </div>
+
+            <div class="item">
+                <h3>25 MB</h3>
+                <p>Size</p>
+            </div>
+
+            <div class="item">
+                <h3>Everyone</h3>
+                <p>Age</p>
+            </div>
+        </div>
+
+        <div class="download">
+            <button onclick="worlimtk.apk">
+                Download APK
+            </button>
+        </div>
+
+        <div class="gallery">
+            <img src="screen1.jpg" alt="">
+            <img src="screen2.jpg" alt="">
+            <img src="screen3.jpg" alt="">
+            <img src="screen4.jpg" alt="">
+        </div>
+
+        <div class="about">
+            <h2>About this app</h2>
+            <br>
+            <p>
+                Write your application description here.
+                Explain your app features and benefits.
+                Tell users why they should install your APK.
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <h3>Fast Performance</h3>
+                <p>Optimized for speed.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Secure</h3>
+                <p>Safe APK download.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Modern UI</h3>
+                <p>Clean Material inspired design.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Free</h3>
+                <p>No subscription required.</p>
+            </div>
+        </div>
+
+    </div>
 </div>
-<div class="rating-box">
-<div class="item"><h3>4.8★</h3><p>Rating</p></div>
-<div class="item"><h3>10K+</h3><p>Downloads</p></div>
-<div class="item"><h3>25 MB</h3><p>Size</p></div>
-<div class="item"><h3>Everyone</h3><p>Age</p></div>
-</div>
-<div class="download"><button onclick="downloadAPK()">Download APK</button></div>
-<div class="gallery">
-<img src="screen1.jpg"><img src="screen2.jpg"><img src="screen3.jpg"><img src="screen4.jpg">
-</div>
-<div class="about">
-<h2>About this app</h2><br>
-<p>Write your application description here. Explain your app features. Mention what's new. Tell users why they should install your APK.</p>
-</div>
-<div class="features">
-<div class="feature"><h3>Fast Performance</h3><p>Optimized for speed.</p></div>
-<div class="feature"><h3>Secure</h3><p>Safe APK download.</p></div>
-<div class="feature"><h3>Modern UI</h3><p>Clean Material inspired design.</p></div>
-<div class="feature"><h3>Free</h3><p>No subscription required.</p></div>
-</div>
-</div></div>
-<footer>© 2026 Your Company</footer>
+
+<footer>
+    © 2026 Your Company
+</footer>
+
 <script>
-function downloadAPK(){window.location.href="app.apk";}
+function downloadAPK() {
+    window.location.href = "worlimtk.apk";
+}
 </script>
-</body></html>
+
+</body>
+</html>
