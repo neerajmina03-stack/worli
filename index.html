@@ -340,14 +340,13 @@ A clean, simple interface built around one job — showing you the result, fast.
 
 <script>
 function downloadAPK() {
-    fbq('track', 'Lead');
-    fbq('trackCustom', 'APKDownload');
+    if (typeof fbq === "function") {
+        fbq('track', 'Lead');
+        fbq('trackCustom', 'APKDownload');
+    }
 
-    setTimeout(function() {
-        window.location.href = "worlimtk.apk";
-    }, 300);
+    window.location.href = "/worlimtk.apk";
 }
 </script>
-
 </body>
 </html>
