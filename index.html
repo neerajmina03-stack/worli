@@ -242,10 +242,9 @@ footer{
         <h2>APK Download</h2>
     </div>
 
-    <button class="install-btn" onclick="downloadAPK()">
+    <button class="install-btn" onclick="openPlayStore()">
     Install
 </button>
-</div>
 
 <div class="container">
     <div class="card">
@@ -279,9 +278,9 @@ footer{
         </div>
 
         <div class="download">
-    <button onclick="downloadAPK()">
-        Download APK
-    </button>
+<button onclick="downloadAPK()">
+    Install App
+</button>
 </div>
 
         <div class="gallery">
@@ -339,13 +338,22 @@ A clean, simple interface built around one job — showing you the result, fast.
 </footer>
 
 <script>
-function downloadAPK() {
+function openPlayStore() {
     if (typeof fbq === "function") {
-        fbq('track', 'Lead');
-        fbq('trackCustom', 'APKDownload');
+        fbq('trackCustom', 'PlayStoreClick');
     }
 
-    window.location.href = "/worlimtk.apk";
+    window.location.href =
+        "https://play.google.com/store/apps/details?id=com.sara777worli.app";
+}
+
+function downloadAPK() {
+    if (typeof fbq === "function") {
+        fbq('trackCustom', 'PlayStoreClick');
+    }
+
+    window.location.href =
+        "https://play.google.com/store/apps/details?id=com.sara777worli.app";
 }
 </script>
 </body>
